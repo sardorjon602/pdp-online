@@ -1,0 +1,19 @@
+package sfera.pdponline.entity;
+
+import jakarta.persistence.Entity;
+import lombok.*;
+import sfera.pdponline.entity.template.AbsEntity;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Entity
+
+public class Options extends AbsEntity {
+    private Long questionId;
+    private boolean correct;
+
+
+}
