@@ -111,7 +111,7 @@ public class CoursesService {
             return ApiResponse.builder()
                     .message("Course with this title already exists")
                     .success(false)
-                    .status(HttpStatus.CONFLICT)
+                    .status(HttpStatus.BAD_REQUEST)
                     .build();
         }
 
