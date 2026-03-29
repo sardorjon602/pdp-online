@@ -8,6 +8,8 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 public class RequestModule {
+
     private String title;
+
     private Long courseId;
 }

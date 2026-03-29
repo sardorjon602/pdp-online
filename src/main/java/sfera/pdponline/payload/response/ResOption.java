@@ -7,11 +7,12 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ResModule {
 
+public class ResOption {
     private Long id;
 
-    private String title;
+    private Boolean correct;
 
-    private String courseName;
+    private String questionName;
+
 }

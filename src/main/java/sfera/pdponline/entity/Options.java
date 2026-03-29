@@ -1,6 +1,7 @@
 package sfera.pdponline.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import lombok.*;
 import sfera.pdponline.entity.template.AbsEntity;
 
@@ -12,7 +13,10 @@ import sfera.pdponline.entity.template.AbsEntity;
 @Entity
 
 public class Options extends AbsEntity {
-    private Long questionId;
+
+    @ManyToOne
+    private Questions question;
+
     private boolean correct;
 
 

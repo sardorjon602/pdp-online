@@ -15,6 +15,7 @@ import sfera.pdponline.entity.template.AbsEntity;
 @Entity
 
 public class Roles extends AbsEntity implements GrantedAuthority {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

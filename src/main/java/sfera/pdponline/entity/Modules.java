@@ -12,6 +12,7 @@ import sfera.pdponline.entity.template.AbsEntity;
 @Builder
 @Entity
 public class Modules extends AbsEntity {
+
     private String title;
 
     @ManyToOne

@@ -1,18 +1,17 @@
 package sfera.pdponline.payload.request;
 
 import lombok.*;
-import java.util.Date;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class RequestEvent {
 
-    private String title;
+public class RequestOption {
 
-    private Date date;
+    private Boolean correct;
 
-    private String file;
+    private Long questionId;
+
 }

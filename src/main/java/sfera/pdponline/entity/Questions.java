@@ -1,6 +1,8 @@
 package sfera.pdponline.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import lombok.*;
 import sfera.pdponline.entity.template.AbsEntity;
 
@@ -12,8 +14,12 @@ import sfera.pdponline.entity.template.AbsEntity;
 @Entity
 
 public class Questions extends AbsEntity {
-    private Long testId;
+
+    @ManyToOne
+    private Tests test;
+
     private String text;
+
     private String file;
 
 

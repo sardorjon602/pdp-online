@@ -1,6 +1,7 @@
 package sfera.pdponline.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import lombok.*;
 import sfera.pdponline.entity.template.AbsEntity;
 
@@ -14,9 +15,15 @@ import java.sql.Time;
 @Entity
 
 public class Tests extends AbsEntity {
-    private Long userId;
-    private Long moduleId;
+
+    @ManyToOne
+    private Users user;
+
+    @ManyToOne
+    private Modules module;
+
     private Time timeLimit;
+
     private Long questionCount;
 
 

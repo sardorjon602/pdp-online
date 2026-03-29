@@ -8,36 +8,36 @@ import sfera.pdponline.payload.request.RequestLessonContent;
 import sfera.pdponline.service.LessonContentService;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/lesson-content")
 @RequiredArgsConstructor
 public class LessonContentController {
     private final LessonContentService lessonContentService;
 
-    @GetMapping("lesson-content/list")
+    @GetMapping("/list")
     public ResponseEntity<ApiResponse> getAll() {
         ApiResponse response = lessonContentService.findAll();
         return ResponseEntity.status(response.getStatus()).body(response);
     }
 
-    @GetMapping("lesson-content/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<ApiResponse> getOne(@PathVariable Long id) {
         ApiResponse response = lessonContentService.findById(id);
         return ResponseEntity.status(response.getStatus()).body(response);
     }
 
-    @PostMapping("lesson-content/save")
+    @PostMapping("/save")
     public ResponseEntity<ApiResponse> save(@RequestBody RequestLessonContent request) {
         ApiResponse response = lessonContentService.save(request);
         return ResponseEntity.status(response.getStatus()).body(response);
     }
 
-    @PutMapping("lesson-content/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<ApiResponse> update(@PathVariable Long id, @RequestBody RequestLessonContent request) {
         ApiResponse response = lessonContentService.update(id, request);
         return ResponseEntity.status(response.getStatus()).body(response);
     }
 
-    @DeleteMapping("lesson-content/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<ApiResponse> delete(@PathVariable Long id) {
         ApiResponse response = lessonContentService.delete(id);
         return ResponseEntity.status(response.getStatus()).body(response);

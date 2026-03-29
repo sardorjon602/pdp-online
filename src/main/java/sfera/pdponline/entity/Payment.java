@@ -1,6 +1,8 @@
 package sfera.pdponline.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import lombok.*;
 import sfera.pdponline.entity.template.AbsEntity;
 
@@ -12,10 +14,17 @@ import sfera.pdponline.entity.template.AbsEntity;
 @Entity
 
 public class Payment extends AbsEntity {
-    private Long userId;
-    private Long courseId;
+
+    @ManyToOne
+    private Users user;
+
+    @OneToOne
+    private Courses course;
+
     private String voucher;
+
     private String type;
+
     private boolean status;
 
 

@@ -13,10 +13,14 @@ import sfera.pdponline.entity.template.AbsEntity;
 @Entity
 
 public class LessonContent extends AbsEntity {
+
     private String title;
+
     @ManyToOne
     private Lesson lesson;
+
     private String file;
+
     private Long lessonCount;
 
 }

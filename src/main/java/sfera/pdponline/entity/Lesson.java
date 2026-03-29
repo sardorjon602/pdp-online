@@ -17,10 +17,14 @@ import java.sql.Timestamp;
 
 public class Lesson extends AbsEntity {
     private String title;
+
     @ManyToOne
     private Modules module;
+
     private boolean free;
+
     private Time durationHour;
+
     private String description;
 
 

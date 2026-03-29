@@ -9,10 +9,16 @@ import java.sql.Time;
 @NoArgsConstructor
 @Builder
 public class ResLesson {
+
     private Long id;
+
     private String title;
+
     private String moduleName;
+
     private boolean free;
+
     private Time durationHour;
+
     private String description;
 }

@@ -9,8 +9,12 @@ import java.util.Date;
 @NoArgsConstructor
 @Builder
 public class ResEvent {
+
     private Long id;
+
     private String title;
+
     private Date date;
+
     private String file;
 }

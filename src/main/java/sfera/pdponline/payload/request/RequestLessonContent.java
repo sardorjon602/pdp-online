@@ -8,8 +8,12 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 public class RequestLessonContent {
+
     private String title;
+
     private Long lessonId;
+
     private String file;
+
     private Long lessonCount;
 }

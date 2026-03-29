@@ -14,8 +14,11 @@ import java.util.Date;
 @Entity
 
 public class Events extends AbsEntity {
+
     private String title;
+
     private Date date;
+
     private String file;
 
 
