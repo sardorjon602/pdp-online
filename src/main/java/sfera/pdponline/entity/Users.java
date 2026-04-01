@@ -40,9 +40,6 @@ public class Users extends AbsEntity implements UserDetails {
     private Long code;
 
 
-    private boolean accountNonExpired = true;
-    private boolean accountNonLocked = true;
-    private boolean credentialsNonExpired = true;
     private boolean enabled ;
 
 
@@ -59,17 +56,17 @@ public class Users extends AbsEntity implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return accountNonExpired;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return  accountNonLocked;
+        return  true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return credentialsNonExpired;
+        return true;
     }
 
     @Override

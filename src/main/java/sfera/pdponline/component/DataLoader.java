@@ -3,6 +3,7 @@ package sfera.pdponline.component;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import sfera.pdponline.entity.Roles;
 import sfera.pdponline.entity.Users;
@@ -17,6 +18,7 @@ public class DataLoader implements CommandLineRunner {
 
     private final RoleRepository roleRepository;
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
     @Value("${spring.jpa.hibernate.ddl-auto}")
     private String ddl;
 
@@ -44,9 +46,9 @@ public class DataLoader implements CommandLineRunner {
 
             Users users = Users.builder()
                     .fullName("Admin admin")
-                    .password("admin123")
                     .email("admin@gmail.com")
-                    .phoneNumber("998914676507")
+                    .password(passwordEncoder.encode("admin123"))
+                    .phoneNumber("+998914676507")
                     .enabled(true)
                     .role(admin)
                     .build();

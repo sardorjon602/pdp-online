@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import sfera.pdponline.entity.Users;
 import sfera.pdponline.payload.ApiResponse;
 import sfera.pdponline.payload.request.AuthRegister;
+import sfera.pdponline.payload.request.ReqUser;
 import sfera.pdponline.security.CurrentUser;
 import sfera.pdponline.service.UserService;
 
@@ -36,4 +37,10 @@ public class UserController {
 
     }
 
+
+    @PutMapping("/update")
+    public ResponseEntity<ApiResponse> update(@CurrentUser Users user, @RequestBody ReqUser reqUser){
+        ApiResponse apiResponse = userService.updateUser(user, reqUser);
+        return ResponseEntity.ok(apiResponse);
+    }
 }
