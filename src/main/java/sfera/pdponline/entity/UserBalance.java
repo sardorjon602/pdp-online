@@ -24,6 +24,7 @@ public class UserBalance extends AbsEntity {
 
     private double noRealBalance;
 
-
+// Suhrob ->Certificate , events, TestResult
+// Sardor -> payment, option, giveHomework
 
 }

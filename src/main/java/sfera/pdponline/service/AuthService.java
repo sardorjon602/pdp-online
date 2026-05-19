@@ -35,7 +35,6 @@ public class AuthService {
         boolean exists = userRepository.existsByEmailAndRole_Role(authRegister.getEmail(), Role.ROLE_USER);
         if(exists){
             return new ApiResponse("This email has been used before.",false, HttpStatus.BAD_REQUEST,null);
-
         }
         long code = Math.round(Math.random()*1000000);
 //        long code = (long)(Math.random() * 9000) + 1000;

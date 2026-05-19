@@ -16,6 +16,7 @@ import java.sql.Timestamp;
 @Entity
 
 public class Lesson extends AbsEntity {
+
     private String title;
 
     @ManyToOne

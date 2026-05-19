@@ -1,6 +1,8 @@
 package sfera.pdponline.service;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import sfera.pdponline.entity.Courses;
@@ -21,6 +23,10 @@ public class ModulesService {
     private final ModulesRepository modulesRepository;
     private final CoursesRepository coursesRepository;
 
+
+
+
+    @Cacheable(value = "modules", key = "'all'")
     public ApiResponse findAll() {
         List<Modules> all = modulesRepository.findAll();
         List<ResModule> resModules = new ArrayList<>();
@@ -40,6 +46,7 @@ public class ModulesService {
                 .build();
     }
 
+    @Cacheable(value = "modules" , key = "#id")
     public ApiResponse findById(Long id) {
         Optional<Modules> optional = modulesRepository.findById(id);
         if (optional.isEmpty()) {
@@ -63,6 +70,7 @@ public class ModulesService {
                 .build();
     }
 
+    @CacheEvict(value = "modules" , allEntries = true)
     public ApiResponse save(RequestModule requestModule) {
         boolean exists = modulesRepository.existsByTitleIgnoreCase(requestModule.getTitle());
         if (exists) {
@@ -92,6 +100,7 @@ public class ModulesService {
                 .build();
     }
 
+    @CacheEvict(value = "modules" , allEntries = true)
     public ApiResponse update(Long id, RequestModule requestModule) {
         Optional<Modules> optional = modulesRepository.findById(id);
         if (optional.isEmpty()) {
@@ -132,6 +141,7 @@ public class ModulesService {
                 .build();
     }
 
+    @CacheEvict(value = "modules" ,  allEntries = true)
     public ApiResponse delete(Long id) {
         Optional<Modules> optional = modulesRepository.findById(id);
         if (optional.isEmpty()) {

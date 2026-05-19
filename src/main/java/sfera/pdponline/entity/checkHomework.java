@@ -14,7 +14,7 @@ import java.util.Date;
 @Builder
 @Entity
 
-public class Homework extends AbsEntity {
+public class checkHomework extends AbsEntity {
 
     @ManyToOne
     private LessonContent lessonContent;

@@ -10,7 +10,6 @@ import sfera.pdponline.mapper.UserMapper;
 import sfera.pdponline.payload.ApiResponse;
 import sfera.pdponline.payload.request.AuthRegister;
 import sfera.pdponline.payload.request.ReqUser;
-import sfera.pdponline.payload.response.ResUser;
 import sfera.pdponline.payload.response.Token;
 import sfera.pdponline.repository.RoleRepository;
 import sfera.pdponline.repository.UserRepository;
@@ -24,7 +23,6 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
-    private final RolesRepository rolesRepository;
     private final RoleRepository roleRepository;
     private final UserMapper userMapper;
     private final JWTProvider jWTProvider;

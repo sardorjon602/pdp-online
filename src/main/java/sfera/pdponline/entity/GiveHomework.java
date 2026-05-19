@@ -19,7 +19,7 @@ public class GiveHomework extends AbsEntity {
     private String feedback;
 
     @ManyToOne
-    private Homework homework;
+    private checkHomework checkHomework;
 
     @ManyToOne
     private Users user;
